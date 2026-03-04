@@ -14,6 +14,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family: Arial, sans-serif;
 }
@@ -64,13 +68,12 @@ header{
 
 .submenu{
     position:absolute;
-    top:100%; /* elimina el hueco traicionero */
+    top:100%;
     left:0;
     background:white;
     list-style:none;
     min-width:180px;
     box-shadow:0px 4px 8px rgba(0,0,0,0.2);
-
     opacity:0;
     visibility:hidden;
     transform:translateY(10px);
@@ -134,6 +137,13 @@ header{
     margin-bottom:20px;
 }
 
+/* ================= NOSOTROS ================= */
+
+.nosotros{
+    padding:60px 40px;
+    text-align:center;
+}
+
 /* ================= SERVICIOS ================= */
 
 .servicios{
@@ -175,6 +185,14 @@ header{
 /* ================= NOTICIAS ================= */
 
 .noticias{
+    background:#f4f4f4;
+    padding:60px 40px;
+    text-align:center;
+}
+
+/* ================= CONTACTO ================= */
+
+.contacto{
     background:#f4f4f4;
     padding:60px 40px;
     text-align:center;
@@ -239,38 +257,38 @@ footer{
 
 <nav>
 <ul class="menu">
-<li><a href="#">Inicio</a></li>
+<li><a href="#inicio">Inicio</a></li>
 
 <li class="dropdown">
-<a href="#">Cuentas</a>
+<a href="#servicios">Cuentas</a>
 <ul class="submenu">
-<li><a href="#">Cuenta Digital</a></li>
-<li><a href="#">Cuenta de Ahorro</a></li>
-<li><a href="#">Cuenta Empresarial</a></li>
+<li><a href="#servicios">Cuenta Digital</a></li>
+<li><a href="#servicios">Cuenta de Ahorro</a></li>
+<li><a href="#servicios">Cuenta Empresarial</a></li>
 </ul>
 </li>
 
 <li class="dropdown">
-<a href="#">Tarjetas</a>
+<a href="#servicios">Tarjetas</a>
 <ul class="submenu">
-<li><a href="#">Visa Clásica</a></li>
-<li><a href="#">Mastercard Gold</a></li>
-<li><a href="#">Tarjeta Débito</a></li>
+<li><a href="#servicios">Visa Clásica</a></li>
+<li><a href="#servicios">Mastercard Gold</a></li>
+<li><a href="#servicios">Tarjeta Débito</a></li>
 </ul>
 </li>
 
 <li class="dropdown">
-<a href="#">Préstamos</a>
+<a href="#servicios">Préstamos</a>
 <ul class="submenu">
-<li><a href="#">Personales</a></li>
-<li><a href="#">Hipotecarios</a></li>
-<li><a href="#">Vehículos</a></li>
+<li><a href="#servicios">Personales</a></li>
+<li><a href="#servicios">Hipotecarios</a></li>
+<li><a href="#servicios">Vehículos</a></li>
 </ul>
 </li>
 
-<li><a href="#">Inversiones</a></li>
-<li><a href="#">Seguros</a></li>
-<li><a href="#">Contacto</a></li>
+<li><a href="#servicios">Inversiones</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#contacto">Contacto</a></li>
 </ul>
 </nav>
 
@@ -281,19 +299,28 @@ footer{
 
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
 <h1>Tu banco de confianza</h1>
 <p>Soluciones financieras diseñadas para tu futuro.</p>
 <button class="btn-principal">Abrir Cuenta Ahora</button>
 </section>
 
-<section class="servicios">
+<section class="nosotros" id="nosotros">
+<h2>Sobre Nosotros</h2>
+<p>
+En Banco Gold Coin ofrecemos soluciones financieras modernas, seguras y accesibles.
+Nuestro compromiso es brindar confianza, innovación y crecimiento económico
+para todos nuestros clientes.
+</p>
+</section>
+
+<section class="servicios" id="servicios">
 <h2>Productos Destacados</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="img/cuenta.png" alt="Imagen ilustrativa de Cuenta Digital">
+<img src="img/cuenta.png" alt="Cuenta Digital">
 <h3>Cuenta Digital</h3>
 <p>Administra tu dinero 100% en línea sin complicaciones.</p>
 </div>
@@ -322,6 +349,12 @@ footer{
 <section class="noticias">
 <h2>Educación Financiera</h2>
 <p>Aprende a manejar mejor tus finanzas con nuestros consejos.</p>
+</section>
+
+<section class="contacto" id="contacto">
+<h2>Contacto</h2>
+<p>Escríbenos a contacto@bancogoldcoin.com</p>
+<p>Teléfono: +1 234 567 890</p>
 </section>
 
 <footer>
