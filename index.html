@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banco Gold Coin - Soluciones Financieras</title>
+
+<style>
+
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background-color:#002b5c;
+    color:white;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:45px;
+    width:auto;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#ffd700;
+}
+
+/* SUBMENU */
+
+.submenu{
+    position:absolute;
+    top:100%; /* elimina el hueco traicionero */
+    left:0;
+    background:white;
+    list-style:none;
+    min-width:180px;
+    box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:0.3s ease;
+}
+
+.submenu li{
+    padding:10px;
+}
+
+.submenu li a{
+    color:#002b5c;
+    display:block;
+}
+
+.dropdown:hover .submenu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* BOTONES */
+
+.btn-principal{
+    background:#ffd700;
+    border:none;
+    padding:8px 15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn-secundario{
+    background:white;
+    border:none;
+    padding:8px 15px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-right:10px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:900px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:url("img/hero.jpg") center/cover no-repeat;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+/* ================= SERVICIOS ================= */
+
+.servicios{
+    padding:60px 40px;
+    text-align:center;
+}
+
+.servicios h2{
+    margin-bottom:40px;
+    font-size:28px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    margin-bottom:15px;
+    border-radius:8px;
+}
+
+/* ================= NOTICIAS ================= */
+
+.noticias{
+    background:#f4f4f4;
+    padding:60px 40px;
+    text-align:center;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#002b5c;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px){
+    .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .menu{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        height:auto;
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+    <img src="img/logo.jpg" alt="Banco Gold Coin">
+    <strong>Banco Gold Coin</strong>
+</div>
+
+<nav>
+<ul class="menu">
+<li><a href="#">Inicio</a></li>
+
+<li class="dropdown">
+<a href="#">Cuentas</a>
+<ul class="submenu">
+<li><a href="#">Cuenta Digital</a></li>
+<li><a href="#">Cuenta de Ahorro</a></li>
+<li><a href="#">Cuenta Empresarial</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Tarjetas</a>
+<ul class="submenu">
+<li><a href="#">Visa Clásica</a></li>
+<li><a href="#">Mastercard Gold</a></li>
+<li><a href="#">Tarjeta Débito</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a href="#">Préstamos</a>
+<ul class="submenu">
+<li><a href="#">Personales</a></li>
+<li><a href="#">Hipotecarios</a></li>
+<li><a href="#">Vehículos</a></li>
+</ul>
+</li>
+
+<li><a href="#">Inversiones</a></li>
+<li><a href="#">Seguros</a></li>
+<li><a href="#">Contacto</a></li>
+</ul>
+</nav>
+
+<div>
+<button class="btn-secundario">Banca en Línea</button>
+<button class="btn-principal">Hazte Cliente</button>
+</div>
+
+</header>
+
+<section class="hero">
+<h1>Tu banco de confianza</h1>
+<p>Soluciones financieras diseñadas para tu futuro.</p>
+<button class="btn-principal">Abrir Cuenta Ahora</button>
+</section>
+
+<section class="servicios">
+<h2>Productos Destacados</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="img/cuenta.png" alt="Imagen ilustrativa de Cuenta Digital">
+<h3>Cuenta Digital</h3>
+<p>Administra tu dinero 100% en línea sin complicaciones.</p>
+</div>
+
+<div class="card">
+<img src="img/tarjeta.jpg" alt="Tarjetas de Crédito">
+<h3>Tarjetas de Crédito</h3>
+<p>Disfruta beneficios exclusivos y recompensas.</p>
+</div>
+
+<div class="card">
+<img src="img/prestamo.jpg" alt="Préstamos Personales">
+<h3>Préstamos Personales</h3>
+<p>Financia tus proyectos con tasas competitivas.</p>
+</div>
+
+<div class="card">
+<img src="img/inversion.jpg" alt="Inversiones">
+<h3>Inversiones</h3>
+<p>Haz crecer tu dinero con asesoría profesional.</p>
+</div>
+
+</div>
+</section>
+
+<section class="noticias">
+<h2>Educación Financiera</h2>
+<p>Aprende a manejar mejor tus finanzas con nuestros consejos.</p>
+</section>
+
+<footer>
+<p>© 2026 Banco Gold Coin - Todos los derechos reservados</p>
+<p>Información legal | Términos y condiciones | Privacidad</p>
+</footer>
+
+</body>
+</html>
